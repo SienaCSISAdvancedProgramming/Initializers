@@ -11,14 +11,21 @@
 
 class SuperClass {
     
-    public int x = 6;
-
     // an instance initializer block for the superclass
     {
-        System.out.println("SuperClass instance initializer block");
-        System.out.println("x = " + x);
+        System.out.println("SuperClass instance first initializer block");
+	// we can't do this yet: System.out.println("x = " + x);
     }
-    
+
+    // an instance variable with inline initialization
+    public int x = 6;
+
+    // another instance initializer block for the superclass
+    {
+        System.out.println("SuperClass instance second initializer block");
+	System.out.println("x = " + x);
+    }
+
     // a static initializer block for the superclass
     static
     {
@@ -37,8 +44,8 @@ class SuperClass {
     }
 }
 
-public class InheritanceInitializers extends SuperClass
-{
+public class InheritanceInitializers extends SuperClass {
+    
     //private int x = 5;
  
     // an instance initializer block for the derived class
